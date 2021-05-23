@@ -169,6 +169,7 @@ void SoxSink::write_(const sox_sample_t* samples, size_t n_samples) {
     if (n_samples > 0) {
         if (sox_write(output_, samples, n_samples) != n_samples) {
             roc_log(LogError, "sox sink: failed to write output buffer");
+            exit(-1);
         }
     }
 }
